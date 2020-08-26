@@ -19,7 +19,7 @@ const connect = function () {
   })
 
   conn.on('data', (data) => {
-    console.log(data)
+    console.log(data);
   })
   // interpret incoming data as text
   conn.setEncoding('utf8');
@@ -28,3 +28,26 @@ const connect = function () {
 }
 
 module.exports = {connect};
+
+
+// // exit game via ctrl-c
+// if (key === '\u0003') {
+//   //connection.disconnect();
+//   process.exit();
+// }
+// // move snake
+// if (key === 'w'){
+//   connection.write("Move: up");
+// }
+
+// process.stdin.on('keypress', (str, key) => {
+//     if (key.ctrl && key.name === 'c') {
+//       process.exit();
+//     } else {
+//       console.log(`You pressed the "${str}" key`);
+//       console.log();
+//       console.log(key);
+//       console.log();
+//     }
+//   });
+  
