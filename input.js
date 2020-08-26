@@ -27,6 +27,16 @@ const handleUserInput = (str, key) => {
     connection.write('Move: right');
   }
 
+  if (key.name === 'z') {
+    connection.write('Say: SSsssSSss');
+  }
+  if (key.name === 'x') {
+    connection.write('Say: Hello!!!!');
+  }
+  if (key.name === 'r') {
+    connection.write('Say: *Rattle*');
+  }
+
 }
 const setupInput = function (conn) {
   connection = conn;
