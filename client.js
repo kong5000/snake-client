@@ -1,21 +1,16 @@
 const net = require('net');
-
+const { IP, PORT} = require('./constants')
 /**
  * Establishes connection with the game server
  */
 const connect = function () {
   const conn = net.createConnection({
-    host: '135.23.222.131',
-    port: 50542
+    host: IP,
+    port: PORT
   });
   conn.on('connect', () => {
     console.log("Successful connection!");
     conn.write('Name: US');
-    // conn.write('Move: up');
-    // setInterval(() => {
-    //   conn.write('Move: up');
-    // }, 200)
-
   })
 
   conn.on('data', (data) => {
@@ -28,26 +23,3 @@ const connect = function () {
 }
 
 module.exports = {connect};
-
-
-// // exit game via ctrl-c
-// if (key === '\u0003') {
-//   //connection.disconnect();
-//   process.exit();
-// }
-// // move snake
-// if (key === 'w'){
-//   connection.write("Move: up");
-// }
-
-// process.stdin.on('keypress', (str, key) => {
-//     if (key.ctrl && key.name === 'c') {
-//       process.exit();
-//     } else {
-//       console.log(`You pressed the "${str}" key`);
-//       console.log();
-//       console.log(key);
-//       console.log();
-//     }
-//   });
-  
